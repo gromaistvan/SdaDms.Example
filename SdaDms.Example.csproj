@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Authors>SDA DMS Zrt.</Authors>
+		<Copyright>$(Company) © 2023</Copyright>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+		<Mode>loose</Mode>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" Version="8.0.0-rc.2.23510.2" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Condition="'$(Mode)'!='base'" Remove="1Base\Program.cs" />
+		<Compile Condition="'$(Mode)'!='loose'" Remove="2Loose\Program.cs" />
+		<Compile Condition="'$(Mode)'!='fake'" Remove="3Fake\Program.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="SdaDms.Example.csproj.DotSettings" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>

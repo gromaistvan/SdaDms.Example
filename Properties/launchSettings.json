@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "SdaDms.Example": {
+      "commandName": "Project",
+      "commandLineArgs": "",
+      "hotReloadEnabled": false
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
