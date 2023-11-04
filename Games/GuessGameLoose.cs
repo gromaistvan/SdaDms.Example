@@ -1,6 +1,6 @@
 ﻿namespace SdaDms.Example.Games;
 
-public sealed class GuessGameLoose : IGame
+public sealed class GuessGameLoose: IGame
 {
     private TextReader Input { get; }
 

@@ -1,7 +1,7 @@
 ﻿namespace SdaDms.Example.Games;
 
 /// <summary>
-/// Általános játék.
+/// Egy játék.
 /// </summary>
 public interface IGame
 {
